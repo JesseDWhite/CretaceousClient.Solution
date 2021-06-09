@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -9,11 +9,12 @@ using CretaceousClient.Models;
 
 namespace CretaceousClient.Controllers
 {
-  public class HomeController : Controller
+  public class AnimalsController : Controller
   {
     public IActionResult Index()
     {
-      return RedirectToAction("Index", "Animals");
+      var allAnimals = Animal.GetAnimals();
+      return View(allAnimals);
     }
   }
 }
